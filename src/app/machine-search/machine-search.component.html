@@ -1,0 +1,14 @@
+<div id="search-component">
+  <h4>Machine Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let machine of machines$ | async" >
+      <a routerLink="/detail/{{machine.id}}">
+        {{machine.name}}
+      </a>
+    </li>
+  </ul>
+</div>
+

@@ -1,0 +1,21 @@
+<h2>Machines</h2>
+
+<div>
+  <label>Machine name:
+    <input #machineName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(machineName.value); machineName.value=''">
+    add
+  </button> 
+</div>
+
+<ul class="machines">
+  <li *ngFor="let machine of machines">
+    <a routerLink="/detail/{{machine.id}}">
+      <span class="badge">{{machine.id}}</span> {{machine.name}}
+    </a>
+    <button class="delete" title="delete machine"
+    (click)="delete(machine)">x</button>
+  </li>
+</ul>

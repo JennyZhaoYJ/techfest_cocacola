@@ -1,0 +1,21 @@
+<div *ngIf="machine">
+  <h2>{{ machine.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{machine.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="machine.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>speed(bottle/hour):
+      <input [(ngModel)]="machine.speed" placeholder="speed"/>
+    </label>
+  </div>
+  <div>
+    <label>comments:
+      <input [(ngModel)]="machine.comment" placeholder="potential errors"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
